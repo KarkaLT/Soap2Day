@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:targetApi="28"
+    android:background="@color/black_overlay">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_margin="15dp"/>
+
+    <androidx.mediarouter.app.MediaRouteButton
+        android:id="@+id/media_route_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:mediaRouteTypes="user"
+        android:visibility="gone"
+        tools:ignore="RelativeOverlap" />
+
+    <ImageButton
+        android:id="@id/exo_play"
+        style="@style/ExoMediaButton.Play"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:tint="@color/colorAccent"
+        android:tintMode="src_in"
+        android:background="@drawable/ripple_circle"
+        android:nextFocusDown="@id/exo_progress"
+        android:nextFocusLeft="@id/prev"
+        android:nextFocusRight="@id/next"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@id/exo_pause"
+        style="@style/ExoMediaButton.Pause"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:tint="@color/colorAccent"
+        android:tintMode="src_in"
+        android:background="@drawable/ripple_circle"
+        android:nextFocusDown="@id/exo_progress"
+        android:nextFocusLeft="@id/prev"
+        android:nextFocusRight="@id/next"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/contentControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_centerVertical="true"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/prev"
+                style="@style/ExoMediaButton.Previous"
+                android:layout_height="71dp"
+                android:tint="@color/colorAccent"
+                android:tintMode="src_in"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ripple_circle"
+                android:nextFocusDown="@id/exo_progress"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/next"
+                style="@style/ExoMediaButton.Next"
+                android:layout_height="71dp"
+                android:tint="@color/colorAccent"
+                android:tintMode="src_in"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ripple_circle"
+                android:nextFocusDown="@id/exo_progress"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_above="@+id/exo_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="RtlHardcoded">
+
+        <TextView
+            android:id="@id/exo_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" / "
+            android:textColor="#d4d4d4"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:id="@id/exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#d4d4d4"
+            android:textSize="12sp"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+    <com.google.android.exoplayer2.ui.DefaultTimeBar
+        android:id="@id/exo_progress"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:layout_alignParentBottom="true"
+        android:focusable="true"
+        app:played_color="#fff" />
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Soap2Day</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="story">Story</string>
+    <string name="movies">Movies</string>
+    <string name="most_popular_today">Most popular today</string>
+    <string name="latest_updates">Latest updates</string>
+    <string name="tv_shows">TV shows</string>
+    <string name="search">Search</string>
+    <string name="no_results">No results</string>
+    <string name="cast">Cast</string>
+    <string name="download">Download</string>
+    <string name="size">%1$d MB</string>
+    <string name="free_up">Free up %1$d MB</string>
+    <string name="delete">Delete</string>
+    <string name="delete_successful">Deleted successfully</string>
+    <string name="mark_as_watched">Mark as watched</string>
+    <string name="mark_as_unwatched">Mark as unwatched</string>
+    <string name="calculating">Calculating…</string>
+    <string name="watched">Watched</string>
+    <string name="downloads">Downloads</string>
+    <string name="home">Home</string>
+    <string name="no_connection">No network connection</string>
+    <string name="no_downloads">You haven\'t downloaded anything yet</string>
+    <string name="cast_playing">Playing on %1$s</string>
+</resources>

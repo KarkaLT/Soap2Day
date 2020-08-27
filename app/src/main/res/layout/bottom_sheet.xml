@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/download_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:text="@string/download"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccentSecondary"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:text="@string/calculating"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/watched"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:text="@string/mark_as_watched"/>
+
+</LinearLayout>

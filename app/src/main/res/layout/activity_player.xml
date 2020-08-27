@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.PlayerActivity"
+    android:background="#000">
+
+    <com.github.vkay94.dtpv.DoubleTapPlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:controller_layout_id="@layout/controller_view"
+        app:show_buffering="always"
+        app:played_color="#fff"
+        android:animateLayoutChanges="true"
+        android:focusable="false"
+        app:dtpv_controller="@+id/youtube_overlay" />
+
+    <com.github.vkay94.dtpv.youtube.YouTubeOverlay
+        android:id="@+id/youtube_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:focusable="false"
+        app:yt_playerView="@+id/playerView" />
+
+<!--    <com.google.android.exoplayer2.ui.PlayerView-->
+<!--        android:id="@+id/playerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:controller_layout_id="@layout/controller_view"-->
+<!--        app:show_buffering="always"-->
+<!--        app:played_color="#fff"-->
+<!--        android:animateLayoutChanges="true" />-->
+
+</FrameLayout>
