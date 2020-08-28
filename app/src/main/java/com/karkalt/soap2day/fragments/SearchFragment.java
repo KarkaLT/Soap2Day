@@ -38,10 +38,10 @@ public class SearchFragment extends Fragment {
     TextView noResultsTv;
 
     RecyclerView recyclerViewMoviesSearch;
-    RecyclerView.Adapter adapterMoviesSearch;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterMoviesSearch;
     RecyclerView.LayoutManager managerMoviesSearch;
     RecyclerView recyclerViewTvSearch;
-    RecyclerView.Adapter adapterTvSearch;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterTvSearch;
     RecyclerView.LayoutManager managerTvSearch;
 
     ArrayList<String> moviesSearchNames = new ArrayList<>();
@@ -55,10 +55,6 @@ public class SearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (view != null) {
-            return view;
-        }
-
         view = inflater.inflate(R.layout.fragment_search, container, false);
 
         scrollView = view.findViewById(R.id.scrollView);
@@ -102,10 +98,10 @@ public class SearchFragment extends Fragment {
         searchView.setIconified(false);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
             public boolean onQueryTextSubmit(String query) {
-                searchView.clearFocus();
-                return true;
+                return false;
             }
 
             @Override

@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -112,6 +114,9 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         tinyDB = new TinyDB(this);
 
@@ -346,27 +351,26 @@ public class PlayerActivity extends AppCompatActivity {
 
     private AudioManager.OnAudioFocusChangeListener focusChangeListener =
             focusChange -> {
-                switch (focusChange) {
-                    case (AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK):
-                        if (player != null) {
+                if (player != null) {
+                    switch (focusChange) {
+                        case (AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK):
                             player.setVolume(0.2f);
-                        }
-                        break;
-                    case (AudioManager.AUDIOFOCUS_LOSS_TRANSIENT):
-                    case (AudioManager.AUDIOFOCUS_LOSS):
-                        if (player != null) {
+                            break;
+                        case (AudioManager.AUDIOFOCUS_LOSS_TRANSIENT):
+                        case (AudioManager.AUDIOFOCUS_LOSS):
                             player.setPlayWhenReady(false);
                             player.getPlaybackState();
-                        }
-                        break;
-                    case (AudioManager.AUDIOFOCUS_GAIN):
-                        if (player != null) {
+                            break;
+                        case (AudioManager.AUDIOFOCUS_GAIN):
                             player.setVolume(1f);
-                            player.setPlayWhenReady(true);
+                            if (!activityFinished) {
+                                player.setPlayWhenReady(true);
+                            }
                             player.getPlaybackState();
-                        }
-                        break;
-                    default: break;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             };
 

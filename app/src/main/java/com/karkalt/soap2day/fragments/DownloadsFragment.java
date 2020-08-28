@@ -29,10 +29,10 @@ public class DownloadsFragment extends Fragment {
     ScrollView scrollView;
 
     RecyclerView recyclerViewMovies;
-    RecyclerView.Adapter adapterMovies;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterMovies;
     RecyclerView.LayoutManager managerMovies;
     RecyclerView recyclerViewTv;
-    RecyclerView.Adapter adapterTv;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterTv;
     RecyclerView.LayoutManager managerTv;
 
     ArrayList<String> moviesNames = new ArrayList<>();

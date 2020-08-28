@@ -34,16 +34,16 @@ public class HomeFragment extends Fragment {
     ScrollView scrollView;
 
     RecyclerView recyclerViewMoviesPopular;
-    RecyclerView.Adapter adapterMoviesPopular;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterMoviesPopular;
     RecyclerView.LayoutManager managerMoviesPopular;
     RecyclerView recyclerViewMoviesLatest;
-    RecyclerView.Adapter adapterMoviesLatest;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterMoviesLatest;
     RecyclerView.LayoutManager managerMoviesLatest;
     RecyclerView recyclerViewTvPopular;
-    RecyclerView.Adapter adapterTvPopular;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterTvPopular;
     RecyclerView.LayoutManager managerTvPopular;
     RecyclerView recyclerViewTvLatest;
-    RecyclerView.Adapter adapterTvLatest;
+    RecyclerView.Adapter<MovieAdapter.ViewHolder> adapterTvLatest;
     RecyclerView.LayoutManager managerTvLatest;
 
     ArrayList<String> moviesPopularNames = new ArrayList<>();
